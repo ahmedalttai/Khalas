@@ -1,0 +1,47 @@
+html {
+  border: 2px solid #DB4C3F;
+  border-top: 0px ;
+  height: 100%;
+}
+.titleBar {
+          width:100%;
+          height:1.5em;
+          background-color:#DB4C3F;
+          color:white;
+      }
+.titleBar p {
+  float: left;
+}
+.titleBar i {
+  float: right;
+  margin: 2px;
+  cursor: pointer;;
+  color: white;
+}
+.glyphicon-remove-sign:hover {
+  color: red;
+}
+.glyphicon-minus-sign:hover {
+  color:yellow;
+}
+.glyphicon-plus-sign:hover {
+  color:green;
+}
+input,.titleBar i,button {
+  -webkit-app-region: no-drag;
+}
+.form-inline input {
+  width: auto;
+}
+.checkbox span {
+  color: #DB4C3F;
+}
+.checkbox input[type="checkbox"] {
+background-color:#DB4C3F;
+}
+.list-group {
+  margin: 20px;
+}
+.list-group-item {
+  border-color: #DB4C3F;
+}

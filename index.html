@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="js/angular.min.js"></script>
+        <script src="js/pouchdb-4.0.1.min.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+  <div class="titleBar">
+    <p>
+      Khalas
+    </p>
+    <i onclick="maximizeApp()" class="glyphicon glyphicon-plus-sign" ></i>
+    <i onclick="minimizeApp()" class="glyphicon glyphicon-minus-sign"></i>
+    <i onclick="closeApp()" class="glyphicon glyphicon-remove-sign"></i>
+  </div>
+
+
+
+    <body ng-app="pouchapp" style="-webkit-app-region: drag">
+        <div ng-controller="MainController" style="padding: 20px">
+          <div class="row">
+            <form ng-submit="save(inputForm.todoText)" class="form-inline" id="todoForm">
+                <div class="form-group">
+                    <input type="text" class="form-control col-xs-9 pull-left" id="todoText" ng-submit="save(inputForm.todoText)" placeholder="New ToDo" ng-model="inputForm.todoText">
+                </div>
+                <button type="button" class="btn btn-danger col-xs-3 pull-right" ng-click="save(inputForm.todoText)">Save</button>
+            </form>
+          </div><!-- .row end -->
+          <div class="row">
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="(key, value) in items">
+              <label class="checkbox">
+                <input type="checkbox" ng-click="delete(value._id, value._rev)">
+                <span class="done-{{value.done}}">{{value.todo}}</span>
+              </label>
+            </li>
+          </ul>
+          </div><!-- .row end -->
+        </div>
+    </body>
+</html>
